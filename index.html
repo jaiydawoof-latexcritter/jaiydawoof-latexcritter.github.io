@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rubber Deer Photography</title>
+  <meta name="description" content="Tasteful Kink Film Photography by Jaiy" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <a href="/" class="logo">rbbrdrr</a>
+      <p class="tagline">Tasteful Kink Film Photography by Jaiy</p>
+    </div>
+  </header>
+
+  <main>
+    <div id="gallery" class="masonry-grid"></div>
+    <div id="empty-state" class="empty-state" style="display:none;">
+      <p>Photos coming soon.</p>
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lb-close" aria-label="Close">&#215;</button>
+    <button class="lightbox-prev" id="lb-prev" aria-label="Previous">&#8592;</button>
+    <button class="lightbox-next" id="lb-next" aria-label="Next">&#8594;</button>
+    <div class="lightbox-img-wrap">
+      <img id="lb-img" src="" alt="" />
+    </div>
+  </div>
+
+  <footer>
+    <span>&copy; <span id="year"></span> Rubber Deer Photography</span>
+  </footer>
+
+  <script src="photos.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>

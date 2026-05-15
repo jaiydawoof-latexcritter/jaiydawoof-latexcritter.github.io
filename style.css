@@ -1,0 +1,196 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:      #000000;
+  --white:      #ffffff;
+  --off-white:  #e8e4dc;
+  --dim:        #888888;
+  --accent:     #c8b89a;
+  --gap:        clamp(10px, 1.5vw, 18px);
+  --col-count:  3;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--off-white);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  cursor: crosshair;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1.8rem 3rem 1.4rem;
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header-inner {
+  display: flex;
+  align-items: baseline;
+  gap: 2.2rem;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.22em;
+  color: var(--white);
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: color 0.3s;
+}
+.logo:hover { color: var(--accent); }
+
+.tagline {
+  font-size: clamp(0.6rem, 1.2vw, 0.72rem);
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--dim);
+  font-weight: 200;
+  white-space: nowrap;
+}
+
+/* ===== MAIN / GALLERY ===== */
+main {
+  flex: 1;
+  padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1rem, 4vw, 3rem);
+}
+
+/* Masonry via CSS columns */
+.masonry-grid {
+  columns: var(--col-count);
+  column-gap: var(--gap);
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.masonry-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              filter 0.4s ease,
+              opacity 0.4s ease;
+  filter: grayscale(8%) brightness(0.92);
+  opacity: 0;
+}
+
+.masonry-item img.loaded {
+  opacity: 1;
+}
+
+.masonry-item:hover img {
+  transform: scale(1.03);
+  filter: grayscale(0%) brightness(1);
+}
+
+/* ===== EMPTY STATE ===== */
+.empty-state {
+  text-align: center;
+  padding: 8rem 2rem;
+  color: var(--dim);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.97);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-img-wrap {
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img-wrap img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  display: block;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  line-height: 1;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover { color: var(--white); }
+
+.lightbox-close { top: 1.5rem; right: 2rem; font-size: 2.2rem; }
+.lightbox-prev  { left: 2rem;  top: 50%; transform: translateY(-50%); }
+.lightbox-next  { right: 2rem; top: 50%; transform: translateY(-50%); }
+
+/* ===== FOOTER ===== */
+footer {
+  padding: 2rem 3rem;
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  :root { --col-count: 2; }
+  header { padding: 1.4rem 1.5rem; }
+  .tagline { display: none; }
+}
+
+@media (max-width: 520px) {
+  :root { --col-count: 1; }
+}
