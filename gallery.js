@@ -1,4 +1,4 @@
-(function () {
+document.addEventListener('DOMContentLoaded', function () {
   const gallery  = document.getElementById('gallery');
   const empty    = document.getElementById('empty-state');
   const lightbox = document.getElementById('lightbox');
@@ -10,7 +10,6 @@
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Build gallery
   if (!PHOTOS || PHOTOS.length === 0) {
     empty.style.display = 'block';
   } else {
@@ -30,7 +29,6 @@
     });
   }
 
-  // Lightbox controls
   function openLightbox(index) {
     current = index;
     lbImg.src = PHOTOS[current].src;
@@ -73,4 +71,4 @@
     if (e.key === 'ArrowLeft')   showPrev();
     if (e.key === 'ArrowRight')  showNext();
   });
-})();
+});
