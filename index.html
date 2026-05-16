@@ -1,46 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rubber Deer Photography</title>
-  <meta name="description" content="Tasteful Kink Film Photography by Jaiy" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Rubber Deer Photography</title>
+    <meta name="description" content="Tasteful Kink Film Photography by Jaiy" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 <body>
 
-  <header>
-    <div class="header-inner">
-      <a href="/" class="logo">rbbrdrr</a>
-      <p class="tagline">Tasteful Kink Film Photography by Jaiy</p>
-    </div>
-  </header>
+    <!-- Age Verification Overlay -->
+    <div id="age-gate" class="age-gate">
+          <div class="age-gate-box">
+                  <p class="age-gate-logo">rbbrdrr</p>p>
+                  <p class="age-gate-title">This site contains mature content</p>p>
+                  <p class="age-gate-sub">Rubber Deer Photography features tasteful adult imagery.<br>You must be 18 years of age or older to enter.</p>p>
+                  <div class="age-gate-buttons">
+                            <button id="age-enter" class="age-btn age-btn-enter">I am 18 or older — Enter</button>button>
+                            <button id="age-exit" class="age-btn age-btn-exit">I am under 18 — Exit</button>button>
+                  </div>div>
+                  <p class="age-gate-note">By entering you confirm you are of legal age in your jurisdiction to view adult content.</p>p>
+          </div>div>
+    </div>div>
 
-  <main>
-    <div id="gallery" class="masonry-grid"></div>
-    <div id="empty-state" class="empty-state" style="display:none;">
-      <p>Photos coming soon.</p>
-    </div>
-  </main>
+    <header>
+          <div class="header-inner">
+                  <a href="/" class="logo">rbbrdrr</a>a>
+                  <p class="tagline">Tasteful Kink Film Photography by Jaiy</p>p>
+          </div>div>
+    </header>
+
+    <main>
+          <div id="gallery" class="masonry-grid"></div>div>
+          <div id="empty-state" class="empty-state" style="display:none;">
+                  <p>Photos coming soon.</p>
+          </div>div>
+    </main>
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lb-close" aria-label="Close">&#215;</button>
-    <button class="lightbox-prev" id="lb-prev" aria-label="Previous">&#8592;</button>
-    <button class="lightbox-next" id="lb-next" aria-label="Next">&#8594;</button>
-    <div class="lightbox-img-wrap">
-      <img id="lb-img" src="" alt="" />
-    </div>
-  </div>
+      <button class="lightbox-close" id="lb-close" aria-label="Close">&#215;</button>button>
+      <button class="lightbox-prev" id="lb-prev" aria-label="Previous">&#8592;</button>button>
+      <button class="lightbox-next" id="lb-next" aria-label="Next">&#8594;</button>button>
+      <div class="lightbox-img-wrap">
+            <img id="lb-img" src="" alt="" />
+      </div>div>
+  </div>div>
 
   <footer>
-    <span>&copy; <span id="year"></span> Rubber Deer Photography</span>
+        <span>&copy; <span id="year"></span> Rubber Deer Photography</span>
   </footer>
 
   <script src="photos.js"></script>
   <script src="gallery.js"></script>
+  <script>
+        (function () {
+                var gate = document.getElementById('age-gate');
+                var verified = sessionStorage.getItem('age-verified');
+                if (verified) {
+                          gate.style.display = 'none';
+                }
+                document.getElementById('age-enter').addEventListener('click', function () {
+                          sessionStorage.setItem('age-verified', 'true');
+                          gate.classList.add('age-gate-hide');
+                          setTimeout(function () { gate.style.display = 'none'; }, 600);
+                });
+                document.getElementById('age-exit').addEventListener('click', function () {
+                          window.location.href = 'https://www.google.com';
+                });
+        })();
+  </script>
 </body>
-</html>
+</html>html>
+  </script></span>
+  </footer></p>
+    </main>
+    </header>
+</body></title>
+  </head>
