@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const gallery  = document.getElementById('gallery');
-  const empty    = document.getElementById('empty-state');
-  const lightbox = document.getElementById('lightbox');
-  const lbImg    = document.getElementById('lb-img');
-  const lbClose  = document.getElementById('lb-close');
-  const lbPrev   = document.getElementById('lb-prev');
-  const lbNext   = document.getElementById('lb-next');
-  let   current  = 0;
+  var gallery  = document.getElementById('gallery');
+  var empty    = document.getElementById('empty-state');
+  var lightbox = document.getElementById('lightbox');
+  var lbImg    = document.getElementById('lb-img');
+  var lbClose  = document.getElementById('lb-close');
+  var lbPrev   = document.getElementById('lb-prev');
+  var lbNext   = document.getElementById('lb-next');
+  var current  = 0;
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -14,16 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
     empty.style.display = 'block';
   } else {
     PHOTOS.forEach(function (photo, i) {
-      const item = document.createElement('div');
+      var item = document.createElement('div');
       item.className = 'masonry-item';
-
-      const img = new Image();
+      var img = new Image();
       img.alt = photo.alt || '';
       img.loading = 'lazy';
       img.onload = function () { img.classList.add('loaded'); };
       img.src = photo.src;
       img.addEventListener('click', function () { openLightbox(i); });
-
       item.appendChild(img);
       gallery.appendChild(item);
     });
@@ -60,15 +58,13 @@ document.addEventListener('DOMContentLoaded', function () {
   lbClose.addEventListener('click', closeLightbox);
   lbPrev.addEventListener('click', showPrev);
   lbNext.addEventListener('click', showNext);
-
   lightbox.addEventListener('click', function (e) {
     if (e.target === lightbox) closeLightbox();
   });
-
   document.addEventListener('keydown', function (e) {
     if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape')      closeLightbox();
-    if (e.key === 'ArrowLeft')   showPrev();
-    if (e.key === 'ArrowRight')  showNext();
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showPrev();
+    if (e.key === 'ArrowRight') showNext();
   });
 });
