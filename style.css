@@ -515,3 +515,20 @@ footer {
   .nav { gap: 1.5rem; }
   .page-content { padding: 2rem 1.5rem; }
 }
+
+
+/* ===== GEAR SECTIONS ===== */
+.gear-section {
+  margin-bottom: 4rem;
+}
+
+.gear-section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  letter-spacing: 0.16em;
+  color: var(--white);
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
