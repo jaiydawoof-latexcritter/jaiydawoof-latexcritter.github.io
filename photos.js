@@ -1,9 +1,5 @@
-// ============================================================
-//  PHOTO MANIFEST — edit this file to add/remove photos
-//  Each entry: { src: "photos/filename.jpg", alt: "description" }
-// ============================================================
 const PHOTOS = [
-  // Add your photos here. Example:
-  // { src: "photos/film001.jpg", alt: "portrait in soft light" },
-  // { src: "photos/film002.jpg", alt: "figure study" },
+  { src: "photos/Ritual_BW_Gear_Table.jpg", alt: "Ritual BW Gear Table" },
+  { src: "photos/Ritual_BW_King_Dog.jpg", alt: "Ritual BW King Dog" },
+  { src: "photos/Ritual_Color_Gear_Table.jpg", alt: "Ritual Color Gear Table" }
 ];
