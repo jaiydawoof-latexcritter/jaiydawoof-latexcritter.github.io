@@ -307,7 +307,7 @@ footer {
 /* ===== NAVIGATION ===== */
 .nav {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   align-items: baseline;
 }
 
