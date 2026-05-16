@@ -194,3 +194,111 @@ footer {
 @media (max-width: 520px) {
   :root { --col-count: 1; }
 }
+
+
+/* ===== AGE GATE ===== */
+.age-gate {
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.6s ease;
+}
+
+.age-gate-hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.age-gate-box {
+    text-align: center;
+    max-width: 480px;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.4rem;
+}
+
+.age-gate-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 2.2rem;
+    letter-spacing: 0.22em;
+    color: var(--white);
+    text-transform: lowercase;
+    margin-bottom: 0.5rem;
+}
+
+.age-gate-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dim);
+    font-weight: 200;
+}
+
+.age-gate-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--off-white);
+    line-height: 1.8;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 1.4rem 0;
+}
+
+.age-gate-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    max-width: 320px;
+}
+
+.age-btn {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 300;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+    background: transparent;
+}
+
+.age-btn-enter {
+    color: var(--white);
+    border-color: rgba(255,255,255,0.35);
+}
+
+.age-btn-enter:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.6);
+}
+
+.age-btn-exit {
+    color: var(--dim);
+    border-color: rgba(255,255,255,0.08);
+}
+
+.age-btn-exit:hover {
+    color: var(--off-white);
+    border-color: rgba(255,255,255,0.2);
+}
+
+.age-gate-note {
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.2);
+    text-transform: uppercase;
+    line-height: 1.8;
+    max-width: 340px;
+}
